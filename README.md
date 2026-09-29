@@ -8,4 +8,6 @@ old cloud servers that's not shutdown
 
 directory traversal on old/modern servers 
 
-cancelled/scrapped files that has been uploaded publicly (somehow?) but forgotten (like linux RCCService)
+cancelled/scrapped files that has been uploaded publicly to their cloud (somehow?) but forgotten (like linux RCCService)
+
+less significant but still authentic: waybackmachine files
