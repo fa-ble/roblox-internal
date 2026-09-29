@@ -1,0 +1,38 @@
+local comment = 'Model thumbnail'
+ 
+asseturl, ext, h, v, scriptIcon, toolIcon, url = ...
+
+game:GetService('ThumbnailGenerator').GraphicsMode = 4
+pcall(function() game:GetService('ContentProvider'):SetBaseUrl(url) end)
+
+function tryorelse(tryfunc, failfunc)
+    local r
+    if(pcall(function () r = tryfunc() end)) then
+        return r
+    else
+        return failfunc()
+    end
+ end
+ 
+ t = game:GetService('ThumbnailGenerator')
+ 
+ game:GetService('ScriptContext').ScriptsDisabled = true
+ 
+ for _,i in ipairs(game:GetObjects(asseturl)) do
+ 	if i.className=='Sky' then
+        return tryorelse(
+            function() return t:ClickTexture(i.SkyboxFt, ext, h, v) end,
+            function() return t:Click(ext, h, v, true) end)
+ 	elseif i.className=='Script' then
+ 		return t:ClickTexture(scriptIcon, ext, h, v)
+ 	elseif i.className=='SpecialMesh' then
+ 		part = Instance:new('Part')
+ 		part.Parent = workspace
+ 		i.Parent = part
+ 		return t:Click(ext, h, v, true)
+ 	else
+ 		i.Parent = workspace
+ 	end
+ end
+ 
+ return t:Click(ext, h, v, true)
