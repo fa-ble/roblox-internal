@@ -1,7 +1,2 @@
-Breach location: Unknown
-
-Obtain method: Unknown
-
-Where did I get this? from floof in RRC
-
-Extra Notes: Encrypted
+Encrypted 
+another 2014 RCC that has been lying around is hexagon's 2014 rcc
